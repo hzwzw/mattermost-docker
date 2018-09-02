@@ -11,6 +11,8 @@ ARG PGID=2000
 
 
 # Install some needed packages
+RUN echo http://mirror.lzu.edu.cn/alpine/v3.6/main > /etc/apk/repositories; \
+    echo http://mirror.lzu.edu.cn/alpine/v3.6/community >> /etc/apk/repositories
 RUN apk add --no-cache \
 	ca-certificates \
 	curl \

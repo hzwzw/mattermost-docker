@@ -1,6 +1,8 @@
 FROM nginx:mainline-alpine
 
 # Remove default configuration and add our custom Nginx configuration files
+RUN echo http://mirror.lzu.edu.cn/alpine/v3.6/main > /etc/apk/repositories; \
+    echo http://mirror.lzu.edu.cn/alpine/v3.6/community >> /etc/apk/repositories
 RUN rm /etc/nginx/conf.d/default.conf \
     && apk add --no-cache curl
 
